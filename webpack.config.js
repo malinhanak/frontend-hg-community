@@ -9,15 +9,15 @@ module.exports = {
   entry: [path.join(APP_DIR, 'index.js')],
   output: { path: PROD_DIR, filename: 'js/[name].[hash].js' },
   devServer: {
-    contentBase: PROD_DIR,
+    contentBase: './src',
     host: 'localhost',
     port: 3000,
     historyApiFallback: true,
-    overlay: {
-      errors: true,
-      warnings: true,
-    },
-    open: true,
+    // overlay: {
+    //   errors: true,
+    //   warnings: true,
+    // },
+    // open: true,
   },
   module: {
     rules: [

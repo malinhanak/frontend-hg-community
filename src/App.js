@@ -10,9 +10,13 @@ import { withLightLayout, withDarkLayout } from 'Utils/Layout';
 function App() {
   return (
     <Switch>
-      <Route exact path='/' render={withLightLayout(Start)} />
-      <Route exact path='/horses' render={withLightLayout(Horses)} />
-      <Route path='/horse/:slug' render={withLightLayout(Horse)} />
+      <Route exact path='/'>
+        {withLightLayout(Start)}
+      </Route>
+      <Route exact path='/horses'>
+        {withLightLayout(Horses)}
+      </Route>
+      <Route path='/horse/:slug'>{withLightLayout(Horse)}</Route>
       {/* <Route path='/competition' render={withLightLayout(About)} />
       <Route path='/admin' render={withDarkLayout(About)} /> */}
       <Route path='*' render={() => 'Path Not Found'} />
